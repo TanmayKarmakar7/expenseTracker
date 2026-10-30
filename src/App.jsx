@@ -21,6 +21,11 @@ function App() {
         <ExpenseForm setExpenses={setExpenses} expense={expense} setExpense={setExpense} editingRowId={editingRowId} setEditingRowId={setEditingRowId} />
         <ExpenseTable expenses={expenses} setExpenses={setExpenses} setExpense={setExpense} setEditingRowId={setEditingRowId} />
       </div>
+      <button onClick={() => {
+        if (window.confirm('Are you sure you want to clear all expenses?')) {
+          setExpenses([])
+        }
+      }} className='clear-btn'>Clear Data</button>
     </main>
   )
 }
